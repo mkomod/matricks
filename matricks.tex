@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\input{settings.tex}
+\input{shorthand.tex}
+
+\title{Matricks}
+\author{Michael Komodromos}
+
+\renewcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+While working with matrices I've picked up some tricks, this document is a collection of them. Very much a WIP.
+\end{abstract}
+
+\section{Notation}
+
+\begin{itemize}
+    \item $X \in \R^{n \times p}$
+    \item $\beta \in \R^p$
+    \item $\Sigma \in \R^{p \times p}$ is symmetric and positive-definite.
+    \item $A = \diag(a_1, \dots, a_n) \in \R{n \times n}$
+\end{itemize}
+
+
+
+\section{General}
+
+\begin{align}
+    \sum_{i=1}^n a_i X_{i \cdot} X_{i \cdot}^\top = &\ X^\top AX
+\end{align}
+
+\section{Traces}
+
+\begin{align}
+    \| X \beta \|_2^2 = &\ \beta^\top X^\top X \beta = \tr(X^\top X \beta \beta^\top) \\
+    \tr(\Sigma \Sigma) = &\ \sum_{i, j} \Sigma_ij^2
+\end{align}
+
+
+\section{Cholesky Decomposition}
+
+Write the Cholesky decomposition of $\Sigma = U^\top U = LL^\top$.
+
+\begin{align}
+    \det(\Sigma) = &\ \det(U^\top) \det(U) = \left( \prod_{i=1}^p U_{ii} \right)^2 \\
+    \tr (\Sigma) = &\ \sum_{ij} U_{ij}^2
+\end{align}
+
+
+\end{document}
